@@ -90,3 +90,15 @@ Dado un grupo de 5 personas: **A, B, C, D y E**, cada una tiene una profesión d
   - `E2, E3, E4` → Peso: 9, Calorías: 15
   - `E2, E4, E5` → Peso: **6**, Calorías: 16  optima
 ---
+## Requerimientos Opcionales de solucion
+1. al ser una aplicación web desarrollada en PHP y HTML, no funciona "en" un número específico de sistemas operativos de la misma manera que lo haría una aplicación de escritorio nativa.
+2. Sí, la aplicación es interoperable en un nivel básico de acceso y visualización, pero no lo es en un nivel de intercambio de datos o integración compleja con otros sistemas en su estado actual.
+3. Sí, en su estado actual y para su alcance, la aplicación se puede considerar de fácil mantenimiento.
+5. Actualmente, el código PHP no implementa ningún mecanismo de persistencia de la información.
+6. La solución actual no es escalable para un gran número de elementos. A medida que el número de elementos disponibles para la selección aumenta, el tiempo de procesamiento necesario para encontrar la combinación óptima crece exponencialmente, lo que la hace impráctica para escenarios reales con muchos elementos.
+
+ Para mejorar la escalabilidad en escenarios con un gran número de elementos, se necesitarían algoritmos más avanzados.
+
+ ## Este es el diseno:
+![Vista](https://raw.githubusercontent.com/Jose-Daniel-G/React-Panthera/main/src/components/images/vista.png)
+

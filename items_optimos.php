@@ -1,14 +1,14 @@
 <?php
 
-$optimalItems = buscaElementosOptimos($minCalorias, $pesoMaximo, $items);
+$itemsOptimos = buscaElementosOptimos($minCalorias, $pesoMaximo, $items);
 
-if (!empty($optimalItems)) {
+if (!empty($itemsOptimos)) {
     echo "<p class='lead'>¡Hemos encontrado la mejor combinación para tu expedición!</p>";
     echo "<ul class='list-group mb-3'>";
     // $totalPeso = 0;
     // $totalCalorias = 0;
-    // Se re-itera para mostrar los elementos óptimos, ya que $optimalItems fue calculado arriba
-    foreach ($optimalItems as $item) {
+    // Se re-itera para mostrar los elementos óptimos, ya que $itemsOptimos fue calculado arriba
+    foreach ($itemsOptimos as $item) {
         echo "<li class='list-group-item d-flex justify-content-between align-items-center rounded-lg'>";
         echo "<span><strong>" . htmlspecialchars($item->nombre) . "</strong></span>";
         echo "<span class='badge bg-info text-dark'>Peso: " . htmlspecialchars($item->peso) . " kg</span>";

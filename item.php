@@ -21,14 +21,14 @@ function buscaElementosOptimos($minCalorias, $pesoMaximo, $items) {
     // Enfoque de bitwise para representar las combinaciones.
     // Cada bit en 'i' corresponde a un elemento: si el bit está seteado, el elemento se incluye.
     for ($i = 0; $i < (1 << $n); $i++) {
-        $currentCombination = [];                            // La combinacion actual.
+        $combinacionActual = [];                            // La combinacion actual.
         $actualPesoTotal = 0;                                // Peso total de la combinacion actual.
         $actualTotalcalorias = 0;                            // Calorias totales de la combinacion actual.
 
         for ($j = 0; $j < $n; $j++) {
            
             if (($i >> $j) & 1) {                           // Comprueba si el elemento j está incluido en la combinacion actual.
-                $currentCombination[] = $items[$j];
+                $combinacionActual[] = $items[$j];
                 $actualPesoTotal += $items[$j]->peso;
                 $actualTotalcalorias += $items[$j]->calorias;
             }
@@ -42,7 +42,7 @@ function buscaElementosOptimos($minCalorias, $pesoMaximo, $items) {
             // Una combinacion es mejor si tiene un peso total menor.
             if ($actualPesoTotal < $minPesoTotal) {
                 $minPesoTotal = $actualPesoTotal;       // Actualiza el peso total minimo.
-                $bestCombination = $currentCombination; // Actualiza la mejor combinacion.
+                $bestCombination = $combinacionActual; // Actualiza la mejor combinacion.
             }
         }
     }
@@ -75,12 +75,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 // Encuentra la combinación óptima de elementos con los valores actuales (por defecto o enviados por el usuario).
-$optimalItems = buscaElementosOptimos($minCalorias, $pesoMaximo, $items); // Cambiado nombre de función y parámetros
+$itemsOptimos = buscaElementosOptimos($minCalorias, $pesoMaximo, $items); // Cambiado nombre de función y parámetros
 
 // Variables para los totales que se mostrarán en los resultados
 $totalPeso = 0;
 $totalCalorias = 0;
-foreach ($optimalItems as $item) {
+foreach ($itemsOptimos as $item) {
     $totalPeso += $item->peso;
     $totalCalorias += $item->calorias;
 }
