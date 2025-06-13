@@ -20,8 +20,18 @@
                 <div class="card rounded-lg shadow-sm">
                     <div class="card-body">
                         <h5 class="card-title text-primary">Requisitos de Escalada</h5>
-                        <p class="card-text mb-1"><strong>Mínimo de calorías requeridas:</strong> <span class="badge bg-primary fs-6"><?php echo $minCalorias; ?></span></p>
-                        <p class="card-text"><strong>Peso máximo permitido:</strong> <span class="badge bg-danger fs-6"><?php echo $pesoMaximo; ?></span></p>
+                        <!-- Formulario para modificar calorías y peso -->
+                        <form method="POST" action="">
+                            <div class="mb-3">
+                                <label for="min_calorias" class="form-label">Mínimo de calorías requeridas:</label>
+                                <input type="number" class="form-control rounded-pill" id="min_calorias" name="min_calorias" value="<?php echo htmlspecialchars($minCalorias); ?>" required min="0">
+                            </div>
+                            <div class="mb-3">
+                                <label for="max_peso" class="form-label">Peso máximo permitido (kg):</label>
+                                <input type="number" class="form-control rounded-pill" id="max_peso" name="max_peso" value="<?php echo htmlspecialchars($pesoMaximo); ?>" required min="0">
+                            </div>
+                            <button type="submit" class="btn btn-primary rounded-pill w-100">Calcular</button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -40,9 +50,9 @@
                             <tbody>
                                 <?php foreach ($items as $item): ?>
                                     <tr>
-                                        <td><?php echo $item->nombre; ?></td>
-                                        <td><?php echo $item->peso; ?></td>
-                                        <td><?php echo $item->calorias; ?></td>
+                                        <td><?php echo htmlspecialchars($item->nombre); ?></td>
+                                        <td><?php echo htmlspecialchars($item->peso); ?></td>
+                                        <td><?php echo htmlspecialchars($item->calorias); ?></td>
                                     </tr>
                                 <?php endforeach; ?>
                             </tbody>
@@ -54,8 +64,10 @@
 
         <h2 class="text-center mt-5 mb-3">Resultados de la Combinación Óptima</h2>
         <?php include 'items_optimos.php' ?>
+
     </div>
 
+    <!-- Incluye Bootstrap JS (opcional, para componentes interactivos como dropdowns o modales) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 

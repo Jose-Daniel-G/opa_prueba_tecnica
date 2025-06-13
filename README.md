@@ -1,11 +1,11 @@
 ####  Ejercicio 1: Series Lógicas y Secuencias
 ---
 
-######  1. Serie de Letras Inversas
+#####  1. Serie de Letras Inversas
 
 `RQP, ONM, LKI, [ ? ], FED`  
 *Respuesta correcta:* a. **IHG**  
-**Justificación:** Cada grupo de 3 letras está en orden alfabético descendente (reversa).  
+Cada grupo de 3 letras está en orden alfabético descendente (reversa).  
 ---
 ###### 2. Serie de Letras con Incremento
 `KBJ, LCK, MDL, NEM, [ ? ]`
