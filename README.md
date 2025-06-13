@@ -101,5 +101,6 @@ Dado un grupo de 5 personas: **A, B, C, D y E**, cada una tiene una profesión d
 
  ## Este es el diseno:
 ![Vista](https://raw.githubusercontent.com/Jose-Daniel-G/opa_prueba_tecnica/temp/prueba.png)
+- Puedes llenar forma dinamica los campos Calorias y Peso
 
 
