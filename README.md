@@ -100,5 +100,6 @@ Dado un grupo de 5 personas: **A, B, C, D y E**, cada una tiene una profesión d
  Para mejorar la escalabilidad en escenarios con un gran número de elementos, se necesitarían algoritmos más avanzados.
 
  ## Este es el diseno:
-![Vista](https://raw.githubusercontent.com/Jose-Daniel-G/blob/temp/prueba.png)
+![Vista](https://raw.githubusercontent.com/Jose-Daniel-G/opa_prueba_tecnica/temp/prueba.png)
+
 
